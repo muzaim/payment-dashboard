@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  title: MyGoLangApp API
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:8080
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    sort:
+      name: sort
+      in: query
+      description: >
+        Comma-separated sort fields.
+        `-created_at` = desc
+        `amount` = asc
+      required: false
+      schema:
+        type: string
+        example: "-created_at"
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 401
+        message:
+          type: string
+          example: "Unauthenticated: missing or invalid token"
+      required:
+        - code
+        - message
+
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+        role:
+          type: string
+        token:
+          type: string
+
+    Payment:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        payment_id:
+          type: string
+          example: "TR-626793"
+        merchant:
+          type: string
+          example: "Merchant A"
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+        amount:
+          type: integer
+          example: 50000
+        created_at:
+          type: string
+          format: date-time
+
+    PaymentSummary:
+      type: object
+      properties:
+        pending:
+          type: integer
+          example: 10
+        processing:
+          type: integer
+          example: 20
+        completed:
+          type: integer
+          example: 60
+        failed:
+          type: integer
+          example: 10
+
+    TopMerchant:
+      type: object
+      properties:
+        merchant:
+          type: string
+          example: "PT Nusantara Digital"
+        total:
+          type: integer
+          example: 78
+
+
+  responses:
+    LoginResponse:
+      description: return token and user information
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+
+    PaymentListResponse:
+      description: Payment List
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              payments:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Payment'
+
+    TopMerchantResponse:
+      description: Top 5 merchants by transaction count
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TopMerchant'
+
+
+    UnauthorizedError:
+      description: Authentication failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+paths:
+
+  /dashboard/v1/auth/login:
+    post:
+      summary: Login with email + password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          $ref: '#/components/responses/LoginResponse'
+        "401":
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /dashboard/v1/payments:
+    get:
+      summary: List of payments
+      parameters:
+        - $ref: '#/components/parameters/sort'
+        - in: query
+          name: status
+          schema:
+            type: string
+          description: Filter by status
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          $ref: '#/components/responses/PaymentListResponse'
+        "401":
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /dashboard/v1/payments/summary:
+    get:
+      summary: Payments summary by status
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Summary result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    $ref: '#/components/schemas/PaymentSummary'
+        "401":
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /dashboard/v1/payment/{id}/review:
+    put:
+      summary: Review payment (auto completed)
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Payment reviewed
+        "401":
+          $ref: '#/components/responses/UnauthorizedError'
+    
+  /dashboard/v1/payments/top-merchants:
+    get:
+      summary: Get top 5 merchants by transaction count
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          $ref: '#/components/responses/TopMerchantResponse'
+        "401":
+          $ref: '#/components/responses/UnauthorizedError'
+
+  
+

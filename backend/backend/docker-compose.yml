@@ -1,0 +1,7 @@
+services:
+  durianpay_backend:
+    container_name: durianpay_backend
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
