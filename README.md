@@ -227,9 +227,9 @@ You can:
 
 ## ✨ Quick Access
 
-* Backend → [http://localhost:3000](http://localhost:8000)
+* Backend → [http://localhost:8080](http://localhost:8080)
 * Frontend → [http://localhost:5173](http://localhost:5173)
-* Swagger → [http://localhost:8080](http://localhost:8080)
+* Swagger → [http://localhost:8000](http://localhost:8000)
 
 ---
 
