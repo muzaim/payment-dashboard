@@ -1,38 +1,78 @@
-# DURIANPAY SUBMISSION
-```bash
-Muhammad Syafri Surya Muza`im - Fullstack Developer
-```
+````md
+# 🍃 DURIANPAY SUBMISSION
 
+**Muhammad Syafri Surya Muza`im — Fullstack Developer**
 
-## Clone the Repository
+---
 
-Clone the repository using Git:
+## 📌 Project Overview
+
+This repository contains a fullstack payment dashboard application consisting of:
+
+- ⚙️ Backend Service  
+- 🎨 Frontend Web App  
+- 📘 OpenAPI Documentation  
+- 🐳 Docker Support  
+- 🗄 Automatic Data Seeding  
+
+---
+
+## 📦 Clone Repository
+
 ```bash
 git clone https://github.com/muzaim/payment-dashboard.git
-```
+cd payment-dashboard
+````
 
-## Setup Backend 
-Navigate to the backend folder
+---
+
+## ✅ Requirements
+
+Make sure you have:
+
+* Node.js >= 18
+* Docker & Docker Compose
+* Make
+* Git
+
+---
+
+# 🛠 Backend Setup
+
+Navigate to backend folder:
+
 ```bash
 cd backend
 ```
 
-Configure environment variables
+### 🔐 Environment Configuration
+
+Copy environment template and adjust values:
+
 ```bash
-copy the .env.example and rewrite using your env
+cp env.sample .env
 ```
 
-generate openapi:
+---
+
+### ⚙️ Generate OpenAPI
+
 ```bash
 make openapi-gen
 ```
 
-generate JWT_SECRET:
+---
+
+### 🔑 Generate JWT Secret
+
 ```bash
 make gen-secret
 ```
 
-Run server:
+---
+
+### 🚀 Run Backend Server
+
 ```bash
 cp env.sample .env
 make tool-openapi
@@ -42,98 +82,123 @@ make gen-secret
 make run
 ```
 
-## Data Seeding
+---
 
-Initial data seeding will be automatically executed when you run this application.
+## 🗄 Data Seeding
 
-During the first startup, the system will generate seed data and create a local database file.
+Initial data seeding runs automatically when the application starts for the first time.
+
+A local SQLite database will be created.
 
 ### 📄 Output
 
-After the application is running, you will find the generated database file: database.db
+```bash
+database.db
+```
 
+### 🧠 Notes
 
+* Seeding runs automatically
+* No manual command required
+* Deleting `database.db` will regenerate data on next run
 
-## Setup Frontend 
+---
 
- Navigate to the frontend folder
+# 🎨 Frontend Setup
+
+Navigate to frontend folder:
+
 ```bash
 cd frontend
 ```
 
-Configure environment variables
+### 🔐 Environment Configuration
+
 ```bash
-copy the .env.example and rewrite using your env
+cp .env.example .env
 ```
 
-Install all dependencies that required
+---
+
+### 📦 Install Dependencies
+
 ```bash
 npm install
 ```
 
-Compile and Hot-Reload for Development
+---
+
+### 🔥 Development Mode (Hot Reload)
+
 ```bash
 npm run dev
 ```
 
-Type-Check, Compile and Minify for Production
+---
+
+### 🏗 Production Build
+
 ```bash
 npm run build
 ```
 
-### 🐳 Run with Docker
-
-Run Docker
-
-### Build Backend Container
-Navigate to backend folder
-```bash
-cd backend
-```
-
-Build container
-```bash
-docker compose up --build -d
-```
-
-### Build Frontend Container
-Navigate to frontend folder
-```bash
-cd frontend
-```
-
-Build container
-```bash
-docker compose up --build -d
-```
-
-## Running The App
-Login
-```bash
-email : cs@test.com
-password : password
-
-email : operation@test.com
-password : password
-```
-
-
-## View OpenAPI Documentation (With Docker)
-
-## Prerequisites
-
-- Docker installed
-- `openapi.yaml` exists in backend folder
 ---
 
-## Steps
+# 🐳 Run with Docker
 
-Go to the backend folder
+Ensure Docker is running.
+
+---
+
+## ▶️ Backend Container
+
+```bash
+cd backend
+docker compose up --build -d
+```
+
+---
+
+## ▶️ Frontend Container
+
+Open new terminal:
+
+```bash
+cd frontend
+docker compose up --build -d
+```
+
+---
+
+# 🔐 Login Credentials
+
+```bash
+email: cs@test.com
+password: password
+
+email: operation@test.com
+password: password
+```
+
+---
+
+# 📘 View OpenAPI Documentation (Swagger UI)
+
+### ✅ Prerequisites
+
+* Docker installed
+* `openapi.yaml` exists in backend folder
+
+---
+
+### 🚀 Steps
+
 ```bash
 cd backend
 ```
 
-Run Swagger UI using docker
+Run Swagger UI:
+
 ```bash
 docker run -p 8080:8080 \
   -e SWAGGER_JSON=/foo/openapi.yaml \
@@ -141,10 +206,33 @@ docker run -p 8080:8080 \
   swaggerapi/swagger-ui
 ```
 
-Open in browser
+---
+
+### 🌐 Open in Browser
+
 ```bash
 http://localhost:8080
 ```
 
+You can:
+
+✅ View all API endpoints
+✅ Inspect request & response
+✅ See schemas and models
+✅ Test APIs via Swagger UI
+
+---
+
+## ✨ Quick Access
+
+* Backend → [http://localhost:3000](http://localhost:3000)
+* Frontend → [http://localhost:5173](http://localhost:5173)
+* Swagger → [http://localhost:8080](http://localhost:8080)
+
+---
+
+Thank you for reviewing my technical test 🚀
 
 
+tinggal bilang 😄
+```
