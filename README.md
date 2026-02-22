@@ -51,7 +51,7 @@ cd backend
 Copy environment template and adjust values:
 
 ```bash
-cp env.sample .env
+cp env.example .env
 ```
 
 ---
@@ -234,6 +234,3 @@ You can:
 
 Thank you for reviewing my technical test 🚀
 
-
-tinggal bilang 😄
-```
