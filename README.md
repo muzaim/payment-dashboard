@@ -7,13 +7,12 @@ Muhammad Syafri Surya Muza`im - Fullstack Developer
 ## Clone the Repository
 
 Clone the repository using Git:
-
 ```bash
 git clone https://github.com/muzaim/payment-dashboard.git
 ```
 
 ## Setup Backend 
- Navigate to the backend folder
+Navigate to the backend folder
 ```bash
 cd backend
 ```
@@ -43,12 +42,30 @@ make gen-secret
 make run
 ```
 
+## Data Seeding
+
+Initial data seeding will be automatically executed when you run this application.
+
+During the first startup, the system will generate seed data and create a local database file.
+
+### 📄 Output
+
+After the application is running, you will find the generated database file: database.db
+
+
+
 ## Setup Frontend 
 
  Navigate to the frontend folder
 ```bash
 cd frontend
 ```
+
+Configure environment variables
+```bash
+copy the .env.example and rewrite using your env
+```
+
 Install all dependencies that required
 ```bash
 npm install
@@ -67,8 +84,6 @@ npm run build
 ### 🐳 Run with Docker
 
 Run Docker
-
----
 
 ### Build Backend Container
 Navigate to backend folder
