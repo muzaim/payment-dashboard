@@ -118,5 +118,33 @@ password : password
 ```
 
 
+## View OpenAPI Documentation (Without Docker)
+
+## ✅ Prerequisites
+
+- Docker installed
+- `openapi.yaml` exists in backend folder
+---
+
+## 🚀 Steps
+
+Go to the backend folder
+```bash
+cd backend
+```
+
+Run Swagger UI using docker
+```bash
+docker run -p 8080:8080 \
+  -e SWAGGER_JSON=/foo/openapi.yaml \
+  -v $(pwd):/foo \
+  swaggerapi/swagger-ui
+```
+
+Open in browser
+```bash
+http://localhost:8080
+```
+
 
 
