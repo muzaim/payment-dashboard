@@ -118,15 +118,15 @@ password : password
 ```
 
 
-## View OpenAPI Documentation (Without Docker)
+## View OpenAPI Documentation (With Docker)
 
-## ✅ Prerequisites
+## Prerequisites
 
 - Docker installed
 - `openapi.yaml` exists in backend folder
 ---
 
-## 🚀 Steps
+## Steps
 
 Go to the backend folder
 ```bash
