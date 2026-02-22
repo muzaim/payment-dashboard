@@ -64,17 +64,6 @@ Type-Check, Compile and Minify for Production
 npm run build
 ```
 
-## Running The App
-Login
-```bash
-email : cs@test.com
-password : password
-
-email : operation@test.com
-password : password
-```
-
-
 ### 🐳 Run with Docker
 
 Run Docker
@@ -101,6 +90,16 @@ cd frontend
 Build container
 ```bash
 docker compose up --build -d
+```
+
+## Running The App
+Login
+```bash
+email : cs@test.com
+password : password
+
+email : operation@test.com
+password : password
 ```
 
 
