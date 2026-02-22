@@ -17,13 +17,6 @@ This repository contains a fullstack payment dashboard application consisting of
 
 ---
 
-## 📦 Clone Repository
-
-```bash
-git clone https://github.com/muzaim/payment-dashboard.git
-cd payment-dashboard
-````
-
 ---
 
 ## ✅ Requirements
@@ -36,6 +29,14 @@ Make sure you have:
 * Git
 
 ---
+
+## 📦 Clone Repository
+
+```bash
+git clone https://github.com/muzaim/payment-dashboard.git
+cd payment-dashboard
+````
+
 
 # 🛠 Backend Setup
 
