@@ -24,6 +24,7 @@ This repository contains a fullstack payment dashboard application consisting of
 Make sure you have:
 
 * Node.js >= 18
+* Golang 1.22 or higher
 * Docker & Docker Compose
 * Make
 * Git
