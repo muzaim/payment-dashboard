@@ -72,3 +72,37 @@ password : password
 
 email : operation@test.com
 password : password
+```
+
+
+### 🐳 Run with Docker
+
+Run Docker
+
+---
+
+### Build Backend Container
+Navigate to backend folder
+```bash
+cd backend
+```
+
+Build container
+```bash
+docker compose up --build -d
+```
+
+### Build Frontend Container
+Navigate to frontend folder
+```bash
+cd frontend
+```
+
+Build container
+```bash
+docker compose up --build -d
+```
+
+
+
+
