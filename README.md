@@ -225,7 +225,7 @@ You can:
 
 ## ✨ Quick Access
 
-* Backend → [http://localhost:3000](http://localhost:3000)
+* Backend → [http://localhost:3000](http://localhost:8000)
 * Frontend → [http://localhost:5173](http://localhost:5173)
 * Swagger → [http://localhost:8080](http://localhost:8080)
 
