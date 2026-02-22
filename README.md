@@ -1,4 +1,4 @@
-````md
+
 # 🍃 DURIANPAY SUBMISSION
 
 **Muhammad Syafri Surya Muza`im — Fullstack Developer**
