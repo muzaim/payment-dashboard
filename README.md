@@ -48,6 +48,11 @@ make run
 
 ## Setup Frontend 
 
+ Navigate to the frontend folder
+```bash
+cd frontend
+```
+Install all dependencies that required
 ```bash
 npm install
 ```
