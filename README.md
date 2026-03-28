@@ -1,10 +1,3 @@
-
-# 🍃 DURIANPAY SUBMISSION
-
-**Muhammad Syafri Surya Muza`im — Fullstack Developer**
-
----
-
 ## 📌 Project Overview
 
 This repository contains a fullstack payment dashboard application consisting of:
